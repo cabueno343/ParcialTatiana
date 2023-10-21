@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Certificado Laboral</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: rgb(128, 128, 128);
+		}
+
+		.container {
+			max-width: 600px;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.logo {
+			max-width: 100px;
+			margin-bottom: 20px;
+		}
+
+		.header {
+			text-align: center;
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		.content {
+			text-align: justify;
+		}
+
+		.signature {
+			margin-top: 40px;
+			border-top: 1px solid #ccc;
+			text-align: right;
+			padding-top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div style="background-color: rgb(255, 255, 255);" class="container">
+		<img th:src="@{/img/s.png}" alt="Logo de la Empresa" class="logo">
+		<div class="header">
+			<strong>CERTIFICADO LABORAL</strong>
+		</div>
+		<br>
+		<div class="content">
+			<p>Por la presente, <strong>SOFTAMON</strong> certifica que <strong>
+					<label th:text="${empleado.nombre_em}+' '+${empleado.apell_em}" class="text-muted mb-0"></label>
+				</strong>con Cc numero <strong>
+					<label th:text="${empleado.cc}" class="text-muted mb-0"></label>
+				</strong> ha trabajado en nuestra empresa desde <strong><label th:text="${empleado.fecha_ini}"
+						class="text-muted mb-0"></label></strong> hasta <strong><label th:text="${empleado.fecha_fin}"
+						class="text-muted mb-0"></label></strong> en el cargo de <strong><label
+						th:text="${empleado.cargo}" class="text-muted mb-0"></label></strong>.</p>
+						<br>
+			<p>Durante su tiempo con nosotros, el Sr./Sra. <strong> <label th:text="${empleado.apell_em}"
+						class="text-muted mb-0"></label></strong> demostró habilidades excepcionales en todos sus
+				deberes que integraba su cargo. Su contribución fue valiosa y apreciamos su dedicación y
+				profesionalismo.</p>
+				<br>
+			<p>Le deseamos al Sr./Sra. <strong>
+					<label th:text="${empleado.apell_em}" class="text-muted mb-0"></label>
+				</strong> mucho éxito en sus futuros empleos.</p>
+		</div>
+		<div class="signature">
+			<p style="text-align: left;">Atentamente,</p>
+			<img th:src="@{/img/f.png}" alt="Firma Digital" style="width: 100px; height: 100px; display: block; margin-left: 0;">
+			<p style="text-align: left;"><strong>Tatiana Mateus</strong></p>
+			<p style="text-align: left;"><em>Recursos Humanos</em></p>
+			<p style="text-align: left;"><strong>SOFTAMON</strong></p>
+		</div>
+	</div>
+	<br>
+	<br>
+<div class="return">
+		<a th:href="@{/empleados/viewEmple/{id}(id = ${empleado.id})}">Regresar</a>
+	</div>
+</body>
+
+</html>

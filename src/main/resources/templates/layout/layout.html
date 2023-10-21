@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:fragment="head">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>SOFTAMON</title>
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link th:href="@{css/styles.css}" rel="stylesheet" />
+	<style>
+		img{
+			width: 20%; /* Esto hará que la imagen ocupe el 100% del ancho del contenedor padre */
+      		max-width: 300px; /* Esto establece un límite máximo de 800 píxeles para la anchura de la imagen */
+      		height: auto; /* Esto mantiene la proporción original de la imagen al ajustar la anchura */
+      		display: block; /* Elimina el espacio adicional debajo de la imagen */
+      		margin: auto; 
+		}
+		body{
+			background-image: url('img/4416312.jpg'); ;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="d-flex" id="wrapper">
+		<!-- Sidebar-->
+		<div class="border-end" id="sidebar-wrapper">
+			<div class="sidebar-heading border-bottom bg-light">SOFTAMON</div>
+			<div class="list-group list-group-flush">
+				<a class="list-group-item list-group-item-action list-group-item-light p-3" th:href="@{/empleados/new}">Registrarse</a>
+				
+			</div>
+		</div>
+		<!-- Page content wrapper-->
+		<div id="page-content-wrapper">
+			<img src="img/s.png" >
+			<!-- Top navigation-->
+			<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+				<div style="background-color: rgb(0, 128, 255);" class="container-fluid">
+					
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation"><span
+							class="navbar-toggler-icon"></span></button>
+					<div style="background-color: rgb(0, 128, 255);" class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto mt-2 mt-lg-">
+							<li class="nav-item active"><a class="nav-link"><strong>Login</strong></a></li>
+			<li class="nav-item active"><a class="nav-link" th:href="@{/loginAdmin}"><strong>Admin</strong></a></li>
+			<li class="nav-item active"><a class="nav-link" th:href="@{/login}"><strong>Empleado</strong></a></li>
+							
+							
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- Page content-->
+			<div class="container-fluid" layout:fragment="page-content">
+				
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap core JS-->
+	<script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js}"></script>
+	<!-- Core theme JS-->
+	<script th:src="@{js/scripts.js}"></script>
+</body>
+
+</html>

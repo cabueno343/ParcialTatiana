@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Formulario Empleado
+	</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		body{
+			background-color: darkgrey;
+		}
+		
+	</style>
+</head>
+
+<body>
+<main>
+    <br><br>
+    <div class="cont">
+		<div class="row">
+			<div class="col-lg-6 col-md- col-sm-6 container justify-content-center card">
+				<br>
+				<h1 class="container d-flex justify-content-center">Crear Empleado</h1>
+			<div class="card-body">
+        <form th:action="@{/empleados/saveForm}" th:object="${empleado}" method="post">
+            <input type="hidden" th:field="*{id}">
+            
+             <div class="form-group">
+                <label for="nombre_em">Nombre</label>
+                <input type="text" id="nombre_em" th:field="*{nombre_em}" class="form-control">
+            </div>
+             <div class="form-group">
+                <label for="apell_em">Apellido </label>
+                <input type="text" id="apell_em" th:field="*{apell_em}" class="form-control">
+            </div>
+             <div class="form-group">
+                <label for="correo_em">Correo </label>
+                <input type="text" id="correo_em" th:field="*{correo_em}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pass_usu">Password </label>
+                <input type="text" id="pass_usu" th:field="*{pass_usu}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="direc_em">Direccion </label>
+                <input type="text" id="direc_em" th:field="*{direc_em}" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label for="Tel">Telefono </label>
+                <input type="text" id="Tel" th:field="*{Tel}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="estado_civ">Estado Civil </label>
+                <input type="text" id="estado_civ" th:field="*{estado_civ}" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label for="sueldo_em">Sueldo Empleado </label>
+                <input type="text" id="sueldo_em" th:field="*{sueldo_em}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fecha_ini">Fecha Ingreso </label>
+                <input type="date" id="fecha_ini" th:field="*{fecha_ini}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fecha_fin">Fehca Finalizacion Contrato </label>
+                <input type="date" id="fecha_fin" th:field="*{fecha_fin}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="cargo">Cargo </label>
+                <input type="text" id="cargo" th:field="*{cargo}" class="form-control">
+            </div>
+             <div class="form-group">
+                <label for="cc">Cedula de Ciudadania </label>
+                <input type="text" id="cc" th:field="*{cc}" class="form-control">
+            </div>
+            
+            <div class="button">
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </div>
+            
+        </form>
+        
+        </div>
+    </div>
+    </div>
+    </div>
+    <br><br>
+    
+    <div class="return">
+		<button class="container d-flex justify-content-center btn btn-dark" type="submit">
+        <a th:href="@{/empleados/}">Regresar</a>
+		</button>
+    </div>
+</main>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+</body>
+
+</html>
